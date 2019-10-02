@@ -7,13 +7,12 @@ server.listen();
 
 sock, addr = server.accept();
 
-data = " "
+data = ""
 while True:
-    tmp_data = socket.recv(1024)
-    if tmp_data:
-        data += tmp_data
-    else:
-        break
-print(data)
+    tmp_data = sock.recv(1024)
+    print(tmp_data.decode("utf8"))
+    input_data = input()
+    sock.send(input_data.encode("utf8"))
+
 server.close()
 
