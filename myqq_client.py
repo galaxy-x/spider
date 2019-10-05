@@ -6,7 +6,7 @@ import threading
 client = socket.socket()
 client.connect(("127.0.0.1", 8000))
 
-user = "bobby1"
+user = "bobby2"
 
 #1. 登录
 login_template = {
@@ -60,10 +60,10 @@ def handle_send():
     while True:
         #1. 随时可以发送消息
         #2. 有新消息随时能接收到
-        op_type = input("请输入你要进行的操作: 1. 发送消息, 2. 退出, 3. 获取在线用户\n")
+        op_type = input("请输入你要进行的操作: 1. 发送消息, 2. 退出, 3. 获取在线用户")
         if op_type not in ["1","2","3"]:
             print("不支持该操作!!!")
-            op_type = input("请输入你要进行的操作: 1. 发送消息, 2. 退出, 3. 获取在线用户\n")
+            op_type = input("请输入你要进行的操作: 1. 发送消息, 2. 退出, 3. 获取在线用户")
         elif op_type == "1":
             to_user = input("请输入你要发送的用户:")
             msg = input("请输入你要发送的消息")
